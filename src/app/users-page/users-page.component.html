@@ -1,0 +1,48 @@
+<!-- <button class="btn btn-success" (click)="getUsers()">Show user</button> -->
+
+
+<button class="btn btn-secondary" (click)="createUser()">Add Account</button>
+<div class="container">
+<table class="table table-bordered  table-striped">
+<thead>
+  <th>ID</th>
+  <th>FirstName</th>
+  <th>LastName</th>
+  <!-- <th>Title</th>
+  <th>Picture</th> -->
+
+  <th>Actions</th>
+</thead>
+<tbody>
+  <tr *ngFor="let user of userpreview">
+
+
+    <td class="table-dark" (click)="goToDetails(user.id)">{{user.id}}</td>
+    <td class="table-light">{{user.firstName}}</td>
+    <td class="table-dark">{{user.lastName}}</td>
+    <!-- <td class="table-light">{{user.title}}</td>
+    <td class="table-dark">{{user.picture}}</td> -->
+    <!-- <td>{{user.gender}}</td> -->
+
+<td >
+
+
+    <button (click)="editUser(user)" class="btn btn-sm btn-warning  me-2">
+    <i class="fa fa-edit"></i>Edit</button>
+  <button (click)="deleteUser(user.id)" class="btn btn-sm btn-danger me-2">
+    <i class="fa fa-remove"></i>Delete</button>
+    <button (click)="getUserById(user.id)" class="btn btn-sm btn-success  me-2">
+      <i class="fa fa-edit"></i>get</button>
+  <!-- <button class="btn btn-secondary" (click)="editUser(user)">Edit</button>
+  <button class="btn btn-secondary" (click)="deleteUser(user.id)">Delete</button> -->
+</td>
+  </tr>
+</tbody>
+ </table>
+
+ <!-- <button class="btn btn-sm btn-info">
+  <i class="fa fa-search"></i>Details</button>
+<button class="btn btn-sm btn-warning">
+  <i class="fa fa-edit"></i>Edit</button>
+<button class="btn btn-sm btn-danger">
+  <i class="fa fa-remove"></i>Delete</button> -->

@@ -1,3 +1,4 @@
+import { LocationStrategy } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'approute';
-}
+stepper: any;
+
+
+constructor(    private location: LocationStrategy
+  ){
+    history.pushState(null, window.location.href);
+    // check if back or forward button is pressed.
+    this.location.onPopState(() => {
+        history.pushState(null, window.location.href);
+        this.stepper.previous();
+    });
+  }
+  }
+

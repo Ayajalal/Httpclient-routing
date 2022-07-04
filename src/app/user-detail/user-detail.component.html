@@ -1,0 +1,83 @@
+<!-- <p>user-detail works!</p>
+<button class="btn btn-success me-2 " (click)="goToChildUserDetail()" > Details</button>
+<button class="btn btn-success me-2"(click)="goTochildPost()" >Back</button>
+<button class="btn btn-success me-2" >Post </button> -->
+<!-- <router-outlet></router-outlet> -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+
+.sidebar {
+  top: 80px;
+  left: 10px;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color:#212529;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  padding: 16px;
+  text-decoration: none;
+}
+
+.sidebar a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: #04AA6D;
+  color: white;
+}
+
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="sidebar ">
+  <a type="button" (click)="goToChildUserDetail()">Details</a>
+  <a  type="button" (click)="goTochildPost()">Show Post</a>
+  <a type="button" (click)="back()">back</a>
+
+</div>
+
+<div class="content">
+  <router-outlet></router-outlet>
+</div>
+
+</body>
+</html>

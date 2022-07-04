@@ -1,0 +1,40 @@
+<button (click)="createPost()"
+class="btn btn-success a-btn-slide-text btn-lg  " style="right:10px; top:20px" >
+  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+  <span><strong>Add</strong></span>
+</button>
+<div class="container "  >
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" >
+    <div class="col" *ngFor="let post of previewPost">
+      <div class="card " style="width: 550px; height: 600px;" >
+        <div class="card-image-wrapper">
+          <img src={{post.image}} class="card-img-top img-fluid" alt="...">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{post.owner.id}}</h5>
+          <p >{{post.text}}  </p>
+          <p class="card-text">{{post.likes}}</p>
+
+
+          <div class="container">
+            <div class="row">
+
+              <button class="btn btn-success a-btn-slide-text mb-3" (click)="editPost(post)">
+                  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                  <span><strong>Edit</strong></span>
+              </button>
+
+              <button (click)="deletePost(post.id)" class="btn btn-success a-btn-slide-text">
+                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                  <span><strong>Delete</strong></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+      </div>
+    </div>
+
