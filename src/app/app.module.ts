@@ -11,6 +11,8 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
 import { PageNotfoundComponent } from './page-notfound/page-notfound.component';
 import { UserDataComponent } from './user-data/user-data.component';
 import { PostPageComponent } from './post-page/post-page.component';
+import { TemplateFormComponent } from './template-form/template-form.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -22,11 +24,13 @@ import { PostPageComponent } from './post-page/post-page.component';
     UserDetailComponent,
     PageNotfoundComponent,
     UserDataComponent,
-    PostPageComponent
+    PostPageComponent,
+    TemplateFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, HttpClientModule,
+    FormsModule,
   ],
   providers: [
    ],

@@ -11,7 +11,7 @@ import { UsersService } from '../services/users.service';
 export class UserDataComponent implements OnInit {
 id='';
 user:UserFull | undefined;
-  constructor(private router: Router,private activatedRoute:ActivatedRoute,private userService:UsersService) {
+  constructor(private router: Router,private userService:UsersService,private activatedRoute:ActivatedRoute) {
 
   }
 

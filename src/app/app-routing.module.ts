@@ -7,6 +7,7 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
 import { PageNotfoundComponent } from './page-notfound/page-notfound.component';
 import { UserDataComponent } from './user-data/user-data.component';
 import { PostPageComponent } from './post-page/post-page.component';
+import { TemplateFormComponent } from './template-form/template-form.component';
 const routes: Routes = [{
   path: 'HomePage',
         component: HomePageComponent,
@@ -19,8 +20,16 @@ const routes: Routes = [{
 {
   path: 'showUsers',
   component: UsersPageComponent,
+},{
+    path:'create',
+    component:TemplateFormComponent,
+  },
+{
+  path:'update/:id',
+  component:TemplateFormComponent,
+}
 
-},
+,
 {
   path: 'UserDetail/:id',
   component:UserDetailComponent ,

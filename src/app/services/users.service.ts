@@ -36,8 +36,8 @@ createUser(payLoad:CreateUserModel):Observable<UserFull>{
 }
 
 
-editAccount(id:string,body:UserPreview):Observable<UserPreview> {
-return this.http.put<UserPreview>(`${this.baseURL}/user/`+id,body,this.options).pipe(
+editAccount(id:string,body:UserFull):Observable<UserFull> {
+return this.http.put<UserFull>(`${this.baseURL}/user/`+id,body,this.options).pipe(
 
   catchError(this.handelError)
 );
@@ -45,8 +45,8 @@ return this.http.put<UserPreview>(`${this.baseURL}/user/`+id,body,this.options).
 
 
 }
-deleteAccount(id:string):Observable<UserPreview>{
-  return this.http.delete<UserPreview>(`${this.baseURL}/user/`+id,{...this.options});
+deleteAccount(id:string):Observable<UserFull>{
+  return this.http.delete<UserFull>(`${this.baseURL}/user/`+id,{...this.options});
 
 }
 getUserById(id:string):Observable<UserFull>{

@@ -4,10 +4,22 @@ export interface List<Type> {
   page: number;
   limit: number;
 }
+// export class createUser implements CreateUserModel
+// // User as a part of list or other data like post / comment.
+// {
+//   constructor(
+//     firstName: string,
+//     lastName: string,
+//     email: string,){}
+
+// }
+
+
 
 export interface UserPreview
 // User as a part of list or other data like post / comment.
 {
+  email: any;
   id: string;
   title: string;
   firstName: string;

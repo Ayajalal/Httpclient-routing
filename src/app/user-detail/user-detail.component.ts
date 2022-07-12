@@ -15,18 +15,21 @@ id='';
 
   ngOnInit(): void {
 
-    this.activatedRoute.paramMap.subscribe((params:ParamMap)=>{
-      this.id=params.get('id')|| '';
+    this.activatedRoute.queryParams.subscribe(params=>{
+      this.id=params['id'];
+      console.log(this.id,'hi from user data details');
 
-      console.log(this.id,'hi');
-    })
+
+
+    });
   }
 
   back(): void {
     this.location.back()
   }
   goToChildUserDetail(): void {
-    this.router.navigate(['detailsUser'],{ relativeTo: this.activatedRoute,queryParams:{ id: this.id }});
+    this.router.navigate(['detailsUser'],{ relativeTo: this.activatedRoute,queryParams:{ id: this.id }
+  });
 }
 goTochildPost():void{
   this.router.navigate(['PostPage/'+this.id],{relativeTo:this.activatedRoute,queryParams:{ id: this.id ,}});

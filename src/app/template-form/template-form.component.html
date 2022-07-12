@@ -1,0 +1,187 @@
+
+
+<div class="content">
+  <router-outlet></router-outlet>
+</div>
+
+
+<form #userForm="ngForm" *ngIf="!result" (ngSubmit)="onSubmit()">
+
+  <div  class="ms-3 border border-dark ps-3 mt-5 card  d-flex aligns-items-center justify-content-center "
+  style="width:450px"  >
+    <h1 class=" ">Template-driven Forms </h1>
+    <div class="card-body" >
+      <div class="row">
+        <div class="col">
+    <div class="mb-1 form-group">
+      <span class="form-control" id="username">First Name</span>
+      <label for="username" class="form-label"></label>
+      </div>
+      </div>
+      <div class="col">
+      <input type="text" class="form-control " #name="ngModel" required id="username" name="username" [(ngModel)]="model.firstName">
+    </div>
+    </div>
+
+
+    <div class="alert alert-danger " *ngIf="!name.valid && name.touched">
+      Name is required
+  </div>
+<div class="row">
+  <div class="col">
+    <div class="mb-1  form-group">
+      <span class="form-control" id="ls">Last Name</span>
+    <label  for="ls" aria-required="" class="form-label"></label>
+    </div>
+    </div>
+
+      <div class="col">
+    <input type="email" class="form-control" id="ls" #lastname="ngModel" name="lastName" required  [(ngModel)]="model.lastName">
+</div>
+<div class="alert alert-danger " *ngIf="!lastname.valid && lastname.touched">
+  lastName is required
+</div>
+</div>
+<div class="row">
+  <div class="col">
+    <div class="mb-1  form-group">
+      <span class="form-control" id="exampleInputEmail1">Email address</span>
+    <label  for="exampleInputEmail1" aria-required="" class="form-label"></label>
+    </div>
+    </div>
+
+      <div class="col">
+    <input type="email" class="form-control" id="exampleInputEmail1"
+     #email="ngModel" required  name="email" email [(ngModel)]="model.email">
+</div>
+
+</div>
+<div class="alert alert-danger " *ngIf="!email.valid&& email.touched  ">
+  email is required
+</div>
+
+
+
+
+
+
+       <button type="submit" class="btn btn-secondary me-3" [disabled]="!userForm.form.valid">Submit</button>
+
+    <button type="button"(click)="userForm.reset()"  class="btn btn-primary">Reset</button>
+
+    <div class="alert alert-success " *ngIf="showMsg ">
+
+      <strong>User Add Successfully!!</strong>
+        </div>
+        <!-- <div class="alert alert-success " *ngIf="showMsg && !userForm.form.valid ">
+
+          <strong>there is a problem !!</strong>
+            </div> -->
+
+
+
+</div>
+
+
+</div>
+
+</form>
+
+
+
+<form #userForm="ngForm" *ngIf="result; userCome" (ngSubmit)="editUser(model)">
+
+  <div  class="ms-3 border border-dark ps-3 mt-5 card  d-flex aligns-items-center justify-content-center "
+  style="width:450px"  >
+    <h1 class=" ">Template-driven Forms </h1>
+    <div class="card-body" >
+      <div class="row">
+        <div class="col">
+    <div class="mb-1 form-group">
+      <span class="form-control" id="username">First Name</span>
+      <label for="username" class="form-label"></label>
+      </div>
+      </div>
+      <div class="col">
+      <input type="text" class="form-control " #name="ngModel" required id="username" name="username" [(ngModel)]="userCome.firstName">
+    </div>
+    </div>
+
+
+
+<div class="row">
+  <div class="col">
+    <div class="mb-1  form-group">
+      <span class="form-control" id="ls">Last Name</span>
+    <label  for="ls" aria-required="" class="form-label"></label>
+    </div>
+    </div>
+
+      <div class="col">
+    <input type="email" class="form-control" id="ls" #lastname="ngModel"
+    name="lastName" required  [(ngModel)]="userCome.lastName">
+</div>
+
+</div>
+<div class="row">
+  <div class="col">
+    <div class="mb-1  form-group">
+      <span class="form-control" id="exampleInputEmail1">Email address</span>
+    <label  for="exampleInputEmail1" aria-required="" class="form-label"></label>
+    </div>
+    </div>
+
+      <div class="col">
+    <input type="email" class="form-control" id="exampleInputEmail1" disabled #email="ngModel" required name="email" email [(ngModel)]="userCome.email">
+</div>
+
+</div>
+
+
+
+<div class="form-group mb-1">
+  <label for="power">Power</label>
+  <select
+      name="power"
+      id="power"
+      class="form-control"
+      required
+      [(ngModel)]="model.title"
+      #powerInput="ngModel"
+  >
+      <option *ngFor="let power of titles" [value]="power">{{ power }}</option>
+  </select>
+  <div class="alert alert-danger my-2" *ngIf="!powerInput.valid && powerInput.touched">
+      Power is required
+  </div>
+</div>
+  <div class="row"  >
+    <div class="col">
+<div class="mb-1 form-group" >
+  <span class="form-control" id="Picture">Picture</span>
+  <label for="Picture" class="form-label"></label>
+  </div>
+  </div>
+  <div class="col">
+  <input type="text" class="form-control " #Picture="ngModel"  id="Picture" name="Picture" [(ngModel)]="model.picture">
+</div>
+</div>
+<button type="submit" class="btn btn-secondary me-3" >Submit</button>
+<button class="btn btn-success me-3" (click)="back()">Back</button>
+    <button type="button"(click)="userForm.reset()"  class="btn btn-primary">Reset</button>
+
+
+    <div class="alert alert-success " *ngIf="showMsg ">
+
+<strong>User edit Successfully!!</strong>
+  </div>
+
+</div>
+
+</div>
+
+</form>
+
+
+
+
